@@ -1,0 +1,26 @@
+{
+	"name": "tmacek/musicshop-wordpress-theme",
+	"description": "Theme for building eshop",
+	"type": "wordpress-theme",
+	"minimum-stability": "stable",
+	"authors": [
+		{
+			"email": "macek.tom@gmail.com",
+			"name": "Tomas Macek"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org"
+		}
+	],
+	"require": {
+		"timber/timber": "^1.19"
+	},
+	"autoload": {
+		"psr-4": {
+			"Theme\\": "src/"
+		}
+	}
+}
