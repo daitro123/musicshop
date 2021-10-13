@@ -4,6 +4,7 @@
 /wp-content/themes/*
 node_modules
 vendor
+images
 
 !wp-content/
 !wp-content/plugins/

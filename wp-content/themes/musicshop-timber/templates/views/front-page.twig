@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <section class="hero">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="hero__slide">
+
+                        <picture>
+                            <img src="{{theme.link}}/assets/images/heroSLide1.jpg" alt="">
+                        </picture>
+                    
+                        <div class="hero__slide-content hero__slide-content--left">
+                            <div class="wrapper">
+                                <h2 class="hero-heading">Play the same instruments as legends did</h2>
+                                <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem facilis consequuntur ipsa laudantium voluptas explicabo culpa amet ut possimus nisi.</p>
+                                <a href="#" class="btn btn--primary">Shop now</a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="hero__slide">
+
+                        <picture>
+                            <img src="{{theme.link}}/assets/images/dj_hand.jpg" alt="">
+                        </picture>
+                    
+                        <div class="hero__slide-content hero__slide-content--center-top">
+                            <div class="wrapper">
+                                <h2 class="hero-heading">We appreciate perfectionism</h2>
+                                <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem facilis consequuntur ipsa laudantium voluptas explicabo culpa amet ut possimus nisi.</p>
+                                <a href="#" class="btn btn--primary">Shop now</a>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,29 @@
+// Colors
+$primary: #fac343;
+$secondary: #51a56b;
+$background: #f8f6f4;
+$dark: #302e2b;
+$grey--light: #eeeeee;
+$grey--lighter: #f6f6f6;
+$grey: #cacaca;
+$grey--medium: #8b8b8b;
+$grey--dark: #6e6e6e;
+
+$font: "Open Sans", sans-serif;
+$font-secondary: "Anton", $font;
+
+// Font weight
+$font-light: 300;
+$font-normal: 400;
+$font-bold: 700;
+$font-black: 800;
+
+// Font mixin
+@mixin font($weight) {
+	font-family: $font;
+	font-weight: $weight;
+}
+
+$text-main: $dark;
+$text-inverse: $background;
+$text-primary: $primary;

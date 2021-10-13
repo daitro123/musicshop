@@ -1,9 +1,0 @@
-{% if accountMenu %}
-	<ul>
-	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-		</li>
-	{% endfor %}
-	</ul>
-{% endif %}

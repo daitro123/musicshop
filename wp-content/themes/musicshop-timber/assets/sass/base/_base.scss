@@ -1,0 +1,11 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	@include font($font-normal);
+	// font-size: 62.5%;
+	color: $dark;
+}

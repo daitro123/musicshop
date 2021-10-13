@@ -1,0 +1,21 @@
+.btn {
+	display: inline-block;
+	padding: 0.75em 2em;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: $font-bold;
+
+	&--primary {
+		background: $primary;
+		color: $background;
+
+		&:hover,
+		&:focus {
+			background: darken($primary, 5%);
+		}
+	}
+
+	&--secondary {
+		background: $secondary;
+	}
+}
