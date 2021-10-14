@@ -33,6 +33,7 @@ class Core
 
     public function loadStyles()
     {
+        wp_enqueue_style('icons', get_stylesheet_directory_uri() . '/assets/icons/bootstrap-icons.css', [], filemtime(get_stylesheet_directory() . '/assets/icons/bootstrap-icons.css'));
         wp_enqueue_style('theme-styles', get_stylesheet_directory_uri() . '/dist/style.min.css', [], filemtime(get_stylesheet_directory() . '/dist/style.min.css'));
     }
 

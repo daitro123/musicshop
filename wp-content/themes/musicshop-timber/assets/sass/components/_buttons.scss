@@ -17,5 +17,16 @@
 
 	&--secondary {
 		background: $secondary;
+		color: $background;
+	}
+
+	&--dark {
+		background: $dark;
+		color: $background;
+
+		&:hover,
+		&:focus {
+			background: lighten($dark, 5%);
+		}
 	}
 }

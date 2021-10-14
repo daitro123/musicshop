@@ -2436,6 +2436,7 @@ h1 {
 
 .hero {
   width: 100%;
+  position: relative;
 }
 .hero__slide {
   position: relative;
@@ -2460,7 +2461,7 @@ h1 {
   display: flex;
   align-items: center;
 }
-.hero__slide-content--center-top {
+.hero__slide-content--center {
   top: 0;
   left: 0;
   right: 0;
@@ -2470,6 +2471,28 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.hero__slide-content--center-top {
+  align-items: flex-start;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 4rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  border-radius: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #302e2b;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #fac343;
 }
 
 .btn {
@@ -2488,4 +2511,50 @@ h1 {
 }
 .btn--secondary {
   background: #51a56b;
+  color: #f8f6f4;
+}
+.btn--dark {
+  background: #302e2b;
+  color: #f8f6f4;
+}
+.btn--dark:hover, .btn--dark:focus {
+  background: #3d3b37;
+}
+
+.featured {
+  padding: 2.5%;
+}
+.featured__item {
+  position: relative;
+}
+.featured__item figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fac343;
+  padding: 1em 2em;
+  color: #302e2b;
+  text-align: center;
+  transition: all 0.2s linear;
+}
+.featured__item figcaption i {
+  color: inherit;
+  padding-left: 5px;
+}
+.featured__item:hover figcaption, .featured__item:focus figcaption {
+  background: #302e2b;
+  color: #f8f6f4;
+}
+.featured__item:hover img, .featured__item:focus img {
+  transform: scale(1.05);
+}
+.featured__image {
+  overflow: hidden;
+}
+.featured__image img {
+  display: block;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.3s ease-out;
 }

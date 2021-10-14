@@ -5,6 +5,7 @@
     <section class="hero">
         <div class="swiper hero-swiper">
             <div class="swiper-wrapper">
+
                 <div class="swiper-slide">
                     <div class="hero__slide">
 
@@ -14,15 +15,16 @@
                     
                         <div class="hero__slide-content hero__slide-content--left">
                             <div class="wrapper">
-                                <h2 class="hero-heading">Play the same instruments as legends did</h2>
+                                <h2 class="hero-heading">Play the same instruments as legends</h2>
                                 <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem facilis consequuntur ipsa laudantium voluptas explicabo culpa amet ut possimus nisi.</p>
-                                <a href="#" class="btn btn--primary">Shop now</a>
+                                <a href="#" class="btn btn--dark">Shop now</a>
                             </div>
                         </div>
 
                         
                     </div>
                 </div>
+
                 <div class="swiper-slide">
                     <div class="hero__slide">
 
@@ -30,20 +32,74 @@
                             <img src="{{theme.link}}/assets/images/dj_hand.jpg" alt="">
                         </picture>
                     
-                        <div class="hero__slide-content hero__slide-content--center-top">
+                        <div class="hero__slide-content hero__slide-content--center">
                             <div class="wrapper">
                                 <h2 class="hero-heading">We appreciate perfectionism</h2>
                                 <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem facilis consequuntur ipsa laudantium voluptas explicabo culpa amet ut possimus nisi.</p>
+                                <a href="#" class="btn btn--primary">DJ equipment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="hero__slide">
+
+                        <picture>
+                            <img src="{{theme.link}}/assets/images/violin.jpg" alt="">
+                        </picture>
+                    
+                        <div class="hero__slide-content hero__slide-content--left">
+                            <div class="wrapper">
+                                <h2 class="hero-heading">We admire quality</h2>
+                                <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem facilis consequuntur ipsa laudantium voluptas explicabo culpa amet ut possimus nisi.</p>
+                                <a href="#" class="btn btn--primary">Classic</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="hero__slide">
+
+                        <picture>
+                            <img src="{{theme.link}}/assets/images/instruments.jpg" alt="">
+                        </picture>
+                    
+                        <div class="hero__slide-content hero__slide-content--center-top">
+                            <div class="wrapper">
+                                <h2 class="hero-heading">We love choice</h2>
+                                <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
                                 <a href="#" class="btn btn--primary">Shop now</a>
                             </div>
                         </div>
-
-                        
                     </div>
                 </div>
+
             </div>
             <div class="swiper-pagination"></div>
         </div>
     </section>
+
+    <section class="featured">
+
+        <div class="row g-0">
+            {% for item in featured %}
+                <figure class="featured__item col">
+                    <a href="{{item.link}}">
+                        <div class="featured__image">
+                            <img src="{{ Image(item.meta('featured_image').id)|resize(768, 480) }}" alt="">
+                        </div>
+                        <figcaption>
+                            <h2>{{item.title}}</h2>
+                            <p>Check it out <i class="bi bi-arrow-right-circle"></i></p>
+                        </figcaption>
+                    </a>
+                </figure>
+            {% endfor %}
+        </div>
+        
+    </section>
+
   </div>
 {% endblock %}
