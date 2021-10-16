@@ -5,6 +5,7 @@
 node_modules
 vendor
 images
+dist
 
 !wp-content/
 !wp-content/plugins/
