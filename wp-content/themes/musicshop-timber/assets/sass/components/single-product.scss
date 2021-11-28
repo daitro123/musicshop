@@ -1,0 +1,28 @@
+.flex-control-thumbs {
+	list-style: none;
+	display: flex;
+	padding-left: 0;
+	li {
+		border: 1px solid $grey;
+
+		&:not(:last-child) {
+			margin-right: 5px;
+		}
+	}
+}
+
+.woocommerce-product-gallery__image {
+}
+
+.flex-viewport {
+	height: 20rem !important;
+	width: 100%;
+}
+
+.woocommerce-product-gallery__trigger {
+	display: none;
+}
+
+.zoomImg {
+	cursor: zoom-in;
+}
