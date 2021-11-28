@@ -2521,9 +2521,6 @@ h1 {
   background: #3d3b37;
 }
 
-.featured {
-  padding: 2.5%;
-}
 .featured__item {
   position: relative;
 }
@@ -2557,4 +2554,29 @@ h1 {
   -o-object-fit: cover;
      object-fit: cover;
   transition: transform 0.3s ease-out;
+}
+
+.flex-control-thumbs {
+  list-style: none;
+  display: flex;
+  padding-left: 0;
+}
+.flex-control-thumbs li {
+  border: 1px solid #cacaca;
+}
+.flex-control-thumbs li:not(:last-child) {
+  margin-right: 5px;
+}
+
+.flex-viewport {
+  height: 20rem !important;
+  width: 100%;
+}
+
+.woocommerce-product-gallery__trigger {
+  display: none;
+}
+
+.zoomImg {
+  cursor: zoom-in;
 }

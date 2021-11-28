@@ -8,6 +8,13 @@ if (is_singular('product')) {
     $product            = wc_get_product($context['post']->ID);
     $context['product'] = $product;
 
+    // // Preparing gallery images
+    // $gallery_ids = $product->get_gallery_image_ids();
+    // foreach ($gallery_ids as $id) {
+    //     $gallery[] = new Timber\Image($id);
+    // };
+    // $context['images'] = $gallery;
+
     // Get related products
     $related_limit               = wc_get_loop_prop('columns');
     $related_ids                 = wc_get_related_products($context['post']->id, $related_limit);

@@ -2,28 +2,48 @@
 
 {% block content %}
 
-    {% do action('woocommerce_before_single_product') %}
 
-    <article itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
+	<div class="container-lg">
 
-        <div class="entry-images">
-            {% do action('woocommerce_before_single_product_summary') %}
+		{% include "templates/partial/breadcrumbs.twig" %}
 
-            <img src="{{ post.thumbnail.src('shop_single') }}" />
-        </div>
+		<div class="row">
+			<div class="col-12 col-md-8">
 
-        <div class="summary entry-summary">
-            {% do action('woocommerce_single_product_summary') %}
-        </div>
+				{% do action('woocommerce_before_single_product') %}
 
-        {% do action('woocommerce_after_single_product_summary') %}
+				<article
+					itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
 
-        <meta itemprop="url" content="{{ post.link }}" />
+					{# <div class="gallery">
+											{% for item in images %}
+												<img src="{{ item.src }}" alt="">
+											{% endfor %}
+										</div> #}
 
-    </article>
+					<div class="entry-images">
+						{% do action('woocommerce_before_single_product_summary') %}
+					</div>
 
-    {% include ["partial/tease-product.twig"] with { products: related_products } %}
+					<div class="summary entry-summary">
+						{% do action('woocommerce_single_product_summary') %}
+					</div>
 
-    {% do action('woocommerce_after_single_product') %}
+					{% do action('woocommerce_after_single_product_summary') %}
+
+					<meta itemprop="url" content="{{ post.link }}"/>
+
+				</article>
+
+			</div>
+			<div class="col-12 col-md-4"></div>
+		</div>
+
+	</div>
+
+
+	{# {% include ["partial/tease-product.twig"] with { products: related_products } %} #}
+
+	{% do action('woocommerce_after_single_product') %}
 
 {% endblock  %}
