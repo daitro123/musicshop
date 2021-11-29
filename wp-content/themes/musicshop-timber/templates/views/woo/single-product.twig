@@ -7,22 +7,59 @@
 
 		{% include "templates/partial/breadcrumbs.twig" %}
 
-		<div class="row">
-			<div class="col-12 col-md-8">
 
-				{% do action('woocommerce_before_single_product') %}
+		{% do action('woocommerce_before_single_product') %}
 
-				<article
-					itemscope itemtype="http://schema.org/Product" class="single-product-details {{ post.class }}">
+		<article itemscope itemtype="http://schema.org/Product" class="single-product {{ post.class }}">
 
-					{# <div class="gallery">
-											{% for item in images %}
-												<img src="{{ item.src }}" alt="">
-											{% endfor %}
-										</div> #}
+			<div class="row">
 
-					<div class="entry-images">
-						{% do action('woocommerce_before_single_product_summary') %}
+				<div class="woocommerce_before_single_product_summary">
+					{% do action('woocommerce_before_single_product_summary') %}
+					<div class="sku">
+						<strong>Model:</strong>
+						{{sku}}
+					</div>
+				</div>
+
+
+				<div class="col-12 col-md-8">
+
+
+					<div class="gallery">
+						<div class="gallery__main swiper">
+
+							<div class="swiper-wrapper">
+
+								{% for item in images %}
+
+									<div class="swiper-slide">
+										<a data-fslightbox href="{{ item.src }}">
+											<img src="{{ item.src|resize(1173,422) }}" alt="">
+										</a>
+									</div>
+
+								{% endfor %}
+
+
+							</div>
+
+						</div>
+						<div class="swiper gallery__thumbs">
+							<div class="swiper-wrapper">
+
+								{% for item in images %}
+
+									<div class="swiper-slide">
+										<img src="{{ item.src('thumbnail') }}" alt="">
+									</div>
+
+								{% endfor %}
+
+							</div>
+
+						</div>
+
 					</div>
 
 					<div class="summary entry-summary">
@@ -33,17 +70,24 @@
 
 					<meta itemprop="url" content="{{ post.link }}"/>
 
-				</article>
+				</div>
+				<div class="col-12 col-md-4 single-product-sidebar">
+					<div class="price">
+						<span class="value" itemprop="price" content="{{ product.price }}">{{ function('wc_price', product.price) }}</span>
+					</div>
 
+					{% do action('musicshop_single_sidebar') %}
+				</div>
 			</div>
-			<div class="col-12 col-md-4"></div>
-		</div>
+
+		</article>
+
+		{% do action('woocommerce_after_single_product') %}
 
 	</div>
 
 
 	{# {% include ["partial/tease-product.twig"] with { products: related_products } %} #}
 
-	{% do action('woocommerce_after_single_product') %}
 
 {% endblock  %}

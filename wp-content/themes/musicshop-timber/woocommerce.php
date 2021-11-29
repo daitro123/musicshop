@@ -7,13 +7,15 @@ if (is_singular('product')) {
     $context['post']    = Timber::get_post();
     $product            = wc_get_product($context['post']->ID);
     $context['product'] = $product;
+    $context['sku'] = $product->get_sku();
+    $context['isOnSale'] = $product->is_on_sale();
 
-    // // Preparing gallery images
-    // $gallery_ids = $product->get_gallery_image_ids();
-    // foreach ($gallery_ids as $id) {
-    //     $gallery[] = new Timber\Image($id);
-    // };
-    // $context['images'] = $gallery;
+    // Preparing gallery images
+    $gallery_ids = $product->get_gallery_image_ids();
+    foreach ($gallery_ids as $id) {
+        $gallery[] = new Timber\Image($id);
+    };
+    $context['images'] = $gallery;
 
     // Get related products
     $related_limit               = wc_get_loop_prop('columns');
