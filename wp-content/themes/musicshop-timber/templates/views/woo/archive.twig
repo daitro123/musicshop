@@ -2,19 +2,32 @@
 
 {% block content %}
 
-    {% do action('woocommerce_before_main_content') %}
+	<div class="container-lg">
 
-    <div class="before-shop-loop">
-        {% do action('woocommerce_before_shop_loop') %}
-    </div>
+		{% include "templates/partial/breadcrumbs.twig" %}
 
-    <div class="loop">
-        {% for post in products %}
-            {% include ["partial/tease-product.twig"] %}
-        {% endfor %}
-    </div>
+		{% if title %}
+			<h1>{{title}}</h1>
+		{% endif %}
 
-    {% do action('woocommerce_after_shop_loop') %}
-    {% do action('woocommerce_after_main_content') %}
+		{% do action('woocommerce_before_main_content') %}
+
+		<div class="before-shop-loop">
+			{% do action('woocommerce_before_shop_loop') %}
+		</div>
+
+		<div class="row my-5">
+			{% for post in products %}
+				<div class="product col col-md-4 col-lg-3">
+					{% include ["partial/tease-product.twig"] %}
+				</div>
+
+			{% endfor %}
+		</div>
+
+		{% do action('woocommerce_after_shop_loop') %}
+		{% do action('woocommerce_after_main_content') %}
+	</div>
+
 
 {% endblock  %}

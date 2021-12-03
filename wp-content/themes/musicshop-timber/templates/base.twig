@@ -1,59 +1,61 @@
 {% block html_head_container %}
 
-{% include 'html-header.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
-{% endblock %}
-
-	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
-			{% block header %}
-				<div class="nav-account">
-					<div class="nav-account__container container-lg">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>					
-						<ul class="nav-account__icons">
-							{% if isLoggedin %}
-								<li class="nav-account__icon"><a href="{{site.url}}/my-account"><img src="{{theme.link}}/assets/icons/account-full.png" alt="account"></a></li>
-							{% else %}
-								<li class="nav-account__icon"><a href="{{site.url}}/my-account"><img src="{{theme.link}}/assets/icons/account-empty.png" alt="account"></a></li>
-							{% endif %}
-							
-							<li class="nav-account__icon"><a href="{{site.url}}/cart"><img src="{{theme.link}}/assets/icons/cart-empty.png" alt="account"></a></li>
-						</ul>
-					</div>
-					
+	{% include 'html-header.twig' %}
+	{% block head %}{% endblock %}
+</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
+<header class="header">
+	{% block header %}
+		<div class="nav-account">
+			<div class="nav-account__container container-lg">
+				<div class="hdr-logo" role="banner">
+					<a class="hdr-logo-link fs-1" href="{{site.url}}" rel="home">{{site.name}}</a>
 				</div>
-				<div class="wrapper container-lg">
-					
-					<nav id="nav-main container-lg" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'items': menu.get_items} %}
-					</nav>	
-				</div>
-			{% endblock %}
-		</header>
+				<ul class="nav-account__icons">
+					{% if isLoggedin %}
+						<li class="nav-account__icon">
+							<a href="{{site.url}}/my-account"><img src="{{theme.link}}/assets/icons/account-full.png" alt="account"></a>
+						</li>
+					{% else %}
+						<li class="nav-account__icon">
+							<a href="{{site.url}}/my-account"><img src="{{theme.link}}/assets/icons/account-empty.png" alt="account"></a>
+						</li>
+					{% endif %}
 
-		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1>{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
+					<li class="nav-account__icon">
+						<a href="{{site.url}}/cart"><img src="{{theme.link}}/assets/icons/cart-empty.png" alt="account"></a>
+					</li>
+				</ul>
 			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
-		</section>
 
-		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
+		</div>
+		<div class="wrapper container-lg">
+
+			<nav id="nav-main container-lg" class="nav-main" role="navigation">
+				{% include "menu.twig" with {'items': menu.get_items} %}
+			</nav>
+		</div>
+	{% endblock %}
+</header>
+
+<section id="content" role="main" class="content-wrapper">
+
+	<div class="wrapper {{sidebar_class}}">
+		{% block content %}
+			Sorry, no content
 		{% endblock %}
-	</body>
-</html>
+	</div>
+	{% if sidebar %}
+		<aside class="layout-sidebar">
+			{{sidebar}}
+		</aside>
+	{% endif %}
+
+
+</section>
+
+{% block footer %}
+	<footer id="footer">
+		{% include 'footer.twig' %}
+	</footer>
+	{{ function('wp_footer') }}
+{% endblock %}</body></html>

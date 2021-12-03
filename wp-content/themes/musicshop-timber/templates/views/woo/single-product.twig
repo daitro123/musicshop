@@ -2,9 +2,7 @@
 
 {% block content %}
 
-
 	<div class="container-lg">
-
 		{% include "templates/partial/breadcrumbs.twig" %}
 
 
@@ -35,7 +33,7 @@
 
 									<div class="swiper-slide">
 										<a data-fslightbox href="{{ item.src }}">
-											<img src="{{ item.src|resize(1173,422) }}" alt="">
+											<img src="{{ item.src("large") }}" alt="">
 										</a>
 									</div>
 
@@ -84,10 +82,9 @@
 
 		{% do action('woocommerce_after_single_product') %}
 
+
+		{# {% include ["partial/tease-product.twig"] with { products: related_products } %} #}
 	</div>
-
-
-	{# {% include ["partial/tease-product.twig"] with { products: related_products } %} #}
 
 
 {% endblock  %}

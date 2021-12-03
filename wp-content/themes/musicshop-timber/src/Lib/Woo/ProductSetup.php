@@ -17,7 +17,10 @@ class ProductSetup
         */
         remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail');
         remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_show_product_loop_sale_flash');
-
+        remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
+        remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+        remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+        remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
         /*
         * Removing hooked functions from SINGLE PRODUCT
@@ -41,10 +44,12 @@ class ProductSetup
 
     public function addActions()
     {
-        // add custom thumbnail
+        // PRODUCT LOOP
         add_action('woocommerce_before_shop_loop_item_title', [$this, 'custom_thumbnail']);
         add_action('woocommerce_before_shop_loop_item_title', [$this, 'custom_onsale']);
+        add_action('woocommerce_after_shop_loop_item_title', [$this, 'custom_price']);
 
+        // SINGLE PRODUCT
         // add title before gallery
         add_action('woocommerce_before_single_product_summary', 'woocommerce_template_single_title');
 
@@ -71,17 +76,55 @@ class ProductSetup
         return $output;
     }
 
+    public function custom_price()
+    {
+        global $product;
+
+        if ($product->is_type('simple')) {
+            // simple product
+            if ($product->get_regular_price() != 0 && !$product->is_on_sale()) {
+                $price = wc_price($product->get_regular_price());
+            } elseif ($product->get_regular_price() != 0 && $product->is_on_sale()) {
+                $price = wc_price($product->get_sale_price());
+            } else {
+                $price = __("Price not set");
+            }
+        }
+
+        if ($product->is_type('variable')) {
+            if ($product->get_regular_price() == 0 && !$product->is_on_sale()) {
+                $price = wc_price($product->get_variation_regular_price('min'));
+            } elseif ($product->get_regular_price() == 0 && $product->is_on_sale()) {
+                $price = wc_price($product->get_variation_sale_price('min'));
+            } else {
+                $price = __("Price not set");
+            }
+        }
+
+        ob_start();
+    ?>
+        <div class="product__price">
+            <span> <?php echo $price; ?> </span>
+        </div>
+        <?php
+        $output = ob_get_contents();
+        ob_end_flush();
+
+        return $output;
+    }
+
     public function custom_onsale()
     {
         global $product;
 
-        $regularPrice = $product->get_regular_price();
-        $salePrice = $product->get_sale_price();
-        $percentage = round((($salePrice / $regularPrice) - 1) * 100);
+        if ($product->is_on_sale()) {
+            $regularPrice = $product->get_regular_price();
+            $salePrice = $product->get_sale_price();
+            $percentage = round((($salePrice / $regularPrice) - 1) * 100);
 
-        ob_start();
-    ?>
-        <?php if ($product->is_on_sale()) : ?>
+
+            ob_start();
+        ?>
             <div class="product__onsale">
 
                 <span class="sale-tag">
@@ -89,11 +132,11 @@ class ProductSetup
                 </span>
 
             </div>
-        <?php endif; ?>
 <?php
-        $output = ob_get_contents();
-        ob_end_flush();
+            $output = ob_get_contents();
+            ob_end_flush();
 
-        return $output;
+            return $output;
+        }
     }
 }

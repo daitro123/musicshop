@@ -8,6 +8,10 @@
 	}
 }
 
+article.product {
+	margin-bottom: 6rem;
+}
+
 .product__onsale {
 	position: absolute;
 	left: 0;
@@ -20,4 +24,39 @@
 	text-transform: uppercase;
 	font-size: 0.75em;
 	font-weight: 700;
+}
+
+.product__thumbnail {
+	display: flex;
+	justify-content: center;
+
+	img {
+		height: 456px;
+		max-width: 100%;
+		object-fit: contain;
+		display: block;
+	}
+}
+
+.product__title {
+	margin: 1rem 0;
+	a {
+		text-decoration: none;
+		color: $dark;
+		font-size: 0.75em;
+	}
+}
+
+.product__price {
+	font-weight: 700;
+}
+
+body.archive h1 {
+	margin: 0rem 0 2rem 0;
+}
+
+.before-shop-loop {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

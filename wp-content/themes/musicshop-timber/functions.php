@@ -30,7 +30,18 @@ Timber::$dirname = array('templates', 'views');
  */
 Timber::$autoescape = false;
 
-
+/**
+ * {{ fn('timber_set_product', post) }} in tease-product.twig
+ * 
+ * Without this, some elements of the listed products 
+ * would show the same information as the first product in the loop. 
+ * If you see an error like Warning: call_user_func_array() 
+ * expects parameter 1 to be a valid callback, no array or string given, 
+ * this is your problem.
+ *
+ * @param object $post
+ * @return void
+ */
 function timber_set_product($post)
 {
 	global $product;
