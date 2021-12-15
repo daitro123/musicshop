@@ -8,25 +8,21 @@
 
 		{% do action('woocommerce_before_single_product') %}
 
-		<article itemscope itemtype="http://schema.org/Product" class="single-product {{ post.class }}">
+		<article itemscope itemtype="http://schema.org/Product" class="single-product {{ post.class }}" data-product-id="{{post.ID}}" ">
+
+			<div class="woocommerce_before_single_product_summary">
+				{% do action('woocommerce_before_single_product_summary') %}
+				<div class="sku">
+					<strong>Model:</strong>
+					{{sku}}
+				</div>
+			</div>
 
 			<div class="row">
 
-				<div class="woocommerce_before_single_product_summary">
-					{% do action('woocommerce_before_single_product_summary') %}
-					<div class="sku">
-						<strong>Model:</strong>
-						{{sku}}
-					</div>
-				</div>
-
-
-				<div class="col-12 col-md-8">
-
-
+				<div class="col-12 col-md-8 single-product-content">
 					<div class="gallery">
 						<div class="gallery__main swiper">
-
 							<div class="swiper-wrapper">
 
 								{% for item in images %}
@@ -39,9 +35,7 @@
 
 								{% endfor %}
 
-
 							</div>
-
 						</div>
 						<div class="swiper gallery__thumbs">
 							<div class="swiper-wrapper">
@@ -57,7 +51,6 @@
 							</div>
 
 						</div>
-
 					</div>
 
 					<div class="summary entry-summary">
@@ -82,8 +75,17 @@
 
 		{% do action('woocommerce_after_single_product') %}
 
+		<section class="related__products">
+			<h2>Related products</h2>
+			<div class="row">
+				{% for item in related_products %}
+					<div class="product col-12 col-sm-6 col-md-4 col-lg-3">
+						{% include ["partial/tease-product.twig"] with { post: item } %}
+					</div>
+				{% endfor %}
+			</div>
+		</section>
 
-		{# {% include ["partial/tease-product.twig"] with { products: related_products } %} #}
 	</div>
 
 

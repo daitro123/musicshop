@@ -1,0 +1,21 @@
+.input {
+	display: inline-block;
+	height: 4rem;
+	width: 100%;
+	background: transparent;
+	border: 1px solid $grey--light;
+	color: $grey--light;
+	outline: 0;
+	padding: 1rem;
+	text-transform: uppercase;
+}
+
+.input--transparent {
+	background: transparent !important;
+	color: $white !important;
+	font-weight: $font-light;
+
+	&::placeholder {
+		color: inherit;
+	}
+}

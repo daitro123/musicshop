@@ -14,7 +14,7 @@ article.product {
 
 .product__onsale {
 	position: absolute;
-	left: 0;
+	left: 1.5rem;
 	top: 0;
 	background-color: $secondary;
 	color: white;
@@ -31,7 +31,7 @@ article.product {
 	justify-content: center;
 
 	img {
-		height: 456px;
+		height: 456px !important;
 		max-width: 100%;
 		object-fit: contain;
 		display: block;
@@ -59,4 +59,30 @@ body.archive h1 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.woocommerce-ordering select {
+	appearance: none;
+	border: 0;
+	background: $grey--light;
+	padding: 0.5rem 1.5rem 0.5rem 0.75rem;
+	cursor: pointer;
+	font-size: 0.875em;
+}
+
+.woocommerce-ordering {
+	position: relative;
+	&::after {
+		content: "▾";
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 10px;
+		color: $black;
+		pointer-events: none;
+	}
+}
+
+.woocommerce-result-count {
+	font-size: 0.875em;
 }

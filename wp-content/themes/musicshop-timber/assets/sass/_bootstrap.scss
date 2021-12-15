@@ -1,7 +1,15 @@
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../../node_modules/bootstrap/scss/functions";
-
-// 2. Include any default variable overrides here
+$grid-breakpoints: (
+	// Extra small screen / phone
+	xs: 0,
+	// Small screen / phone
+	sm: 576px,
+	// Medium screen / tablet
+	md: 768px,
+	// Large screen / desktop
+	lg: 992px,
+	// Extra large screen / wide desktop
+	xl: 1200px
+);
 
 $container-max-widths: (
 	sm: 540px,
@@ -11,15 +19,27 @@ $container-max-widths: (
 	xxl: 1200px,
 );
 
-// 3. Include remainder of required Bootstrap stylesheets
+$spacer: 1rem;
+$spacers: (
+	0: 0,
+	1: $spacer * 0.25,
+	2: $spacer * 0.5,
+	3: $spacer,
+	4: $spacer * 1.5,
+	5: $spacer * 3,
+	6: $spacer * 4,
+	7: $spacer * 5,
+	8: $spacer * 6,
+);
+
+$font-family-base: $font;
+
+// Required
+@import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
 
-// 4. Include any optional Bootstrap CSS as needed
-
-@import "../../node_modules/bootstrap/scss/containers";
+// Optional
+@import "../../node_modules/bootstrap/scss/reboot";
 @import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/helpers";
 @import "../../node_modules/bootstrap/scss/utilities";
-@import "../../node_modules/bootstrap/scss/utilities/api";

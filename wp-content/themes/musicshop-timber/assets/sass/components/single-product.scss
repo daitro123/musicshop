@@ -1,6 +1,4 @@
 body.single-product {
-	margin-bottom: 4rem;
-
 	.product_title {
 		margin-bottom: 1rem !important;
 	}
@@ -130,5 +128,11 @@ body.single-product {
 				background-color: $white;
 			}
 		}
+	}
+}
+
+.related__products {
+	h2 {
+		margin-bottom: 2rem;
 	}
 }

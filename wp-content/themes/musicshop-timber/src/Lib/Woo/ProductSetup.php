@@ -21,6 +21,7 @@ class ProductSetup
         remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
         remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
         remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+        remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10);
 
         /*
         * Removing hooked functions from SINGLE PRODUCT
@@ -45,8 +46,10 @@ class ProductSetup
     public function addActions()
     {
         // PRODUCT LOOP
+        add_action('woocommerce_before_main_content', 'woocommerce_output_all_notices');
         add_action('woocommerce_before_shop_loop_item_title', [$this, 'custom_thumbnail']);
         add_action('woocommerce_before_shop_loop_item_title', [$this, 'custom_onsale']);
+
         add_action('woocommerce_after_shop_loop_item_title', [$this, 'custom_price']);
 
         // SINGLE PRODUCT
@@ -57,7 +60,16 @@ class ProductSetup
         add_action("musicshop_single_sidebar", 'woocommerce_template_single_add_to_cart');
 
         // related product added after single product
-        add_action("woocommerce_after_single_product", 'woocommerce_output_related_products');
+        // add_action("woocommerce_after_single_product", 'woocommerce_output_related_products');
+
+
+
+        add_action("rest_api_init", function () {
+            register_rest_route('musicshop/v1', 'variations/(?P<id>[\d]+)', array(
+                'methods' => 'GET',
+                'callback' => [$this, 'variations_API_route']
+            ));
+        });
     }
 
     public function custom_thumbnail()
@@ -138,5 +150,27 @@ class ProductSetup
 
             return $output;
         }
+    }
+
+    public function variations_API_route($request)
+    {
+        $id = $request['id'];
+        $product = wc_get_product($id);
+
+        $variations = $product->get_available_variations();
+
+        foreach ($variations as $variation) {
+            $variationImages[] = array(
+                'variation_id' => $variation['variation_id'],
+                'attribute_color' => $variation['attributes']['attribute_color'],
+                "images" => array(
+                    'thumbnails' => get_variation_gallery_images($variation['variation_id']),
+                    'large' => get_variation_gallery_images($variation['variation_id'], "large"),
+                    'full' => get_variation_gallery_images($variation['variation_id'], "full")
+                )
+            );
+        }
+
+        return $variationImages;
     }
 }

@@ -1,1 +1,72 @@
-Copyright {{"now"|date('Y')}}
+<footer class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 col-sm-6 col-lg-2 mb-5">
+				<div class="footer__logo h3">MusicShop</div>
+			</div>
+			<div class="col-12 col-sm-6 col-lg-5 pe-md-5 mb-5 mb-lg-0 footer__text">
+				<h3>Don't miss out!</h3>
+				<p>Be the first to know about new products, featured content, exclusive offers and giveaways.</p>
+			</div>
+			<div class="col-12 col-lg-5 footer__signup">
+				<div class="footer__form-wrapper">
+					<form action="">
+						<div class="form-control">
+							<input class="input input--transparent" placeholder="Email" type="email">
+							<button class="btn btn--primary" type="submit">SIGN UP</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<nav class="row mt-5 footer__nav">
+			<div class=" offset-lg-2 col-sm-6 col-lg-2 my-lg-5">
+				<h4>Products</h4>
+				{% include "menu.twig" with {'items': footerProductsMenu.get_items} %}
+			</div>
+			<div class="col-sm-6 col-lg-2 my-lg-5">
+				<h4>Company</h4>
+				<ul class="">
+					<li class="">About</li>
+					<li class="">Contact Us</li>
+					<li class="">Careers</li>
+					<li class="">Newsroom</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-2 my-lg-5">
+				<h4>Customer service</h4>
+				<ul class="">
+					<li class="">About</li>
+					<li class="">Contact Us</li>
+					<li class="">Careers</li>
+					<li class="">Newsroom</li>
+				</ul>
+			</div>
+			<div class="col-sm-6 col-lg-2 my-lg-5">
+				<h4>Account</h4>
+				<ul class="">
+					<li class="">About</li>
+					<li class="">Contact Us</li>
+					<li class="">Careers</li>
+					<li class="">Newsroom</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<div class="container footer__copyright-legal">
+		<div class="row">
+			<div class="col-lg-6 copyright mt-3">
+				<p>Copyright ©2021. MusicShop Concept Website. All Rights Reserved.</p>
+			</div>
+			<div class="col-lg-6 legal mt-3">
+				<ul class="d-flex wrap justify-content-center justify-content-lg-end">
+					<li>Privacy Policy</li>
+					<li>Terms of Use</li>
+					<li>Others</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</footer>

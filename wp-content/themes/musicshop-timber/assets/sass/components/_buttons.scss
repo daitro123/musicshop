@@ -4,10 +4,12 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	font-weight: $font-bold;
+	border: 0;
+	cursor: pointer;
 
 	&--primary {
 		background: $primary;
-		color: $background;
+		color: $dark;
 
 		&:hover,
 		&:focus {

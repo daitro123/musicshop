@@ -6,41 +6,33 @@ class Core
 {
     public function __construct()
     {
-        add_action(
-            'wp_enqueue_scripts',
-            [
-                $this,
-                'loadStyles'
-            ]
-        );
-
-        add_action(
-            'wp_enqueue_scripts',
-            [
-                $this,
-                'loadScripts'
-            ]
-        );
-
-        add_action(
-            'after_setup_theme',
-            [
-                $this,
-                'themeSupports'
-            ]
-        );
+        add_action('wp_enqueue_scripts', [$this, 'loadStyles']);
+        add_action('wp_enqueue_scripts', [$this, 'loadScripts']);
+        add_action('after_setup_theme', [$this, 'themeSupports']);
+        // add_filter('wp_enqueue_scripts', [$this, 'dequeueScripts']);
     }
 
     public function loadStyles()
     {
         wp_enqueue_style('icons', get_stylesheet_directory_uri() . '/assets/icons/bootstrap-icons.css', [], filemtime(get_stylesheet_directory() . '/assets/icons/bootstrap-icons.css'));
         wp_enqueue_style('theme-styles', get_stylesheet_directory_uri() . '/dist/style.min.css', [], filemtime(get_stylesheet_directory() . '/dist/style.min.css'));
+
+        if (is_shop() || is_product_category()) {
+            wp_enqueue_style('select2');
+        }
     }
 
     public function loadScripts()
     {
         wp_enqueue_script('vendor-scripts', get_stylesheet_directory_uri() . '/dist/vendor.min.js', [], filemtime(get_stylesheet_directory() . '/dist/vendor.min.js'), TRUE);
-        wp_enqueue_script('theme-scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', [], filemtime(get_stylesheet_directory() . '/dist/main.min.js'), TRUE);
+        // wp_enqueue_script('single-product-scripts', get_stylesheet_directory_uri() . '/assets/js/single-product.js', null, "1.0", TRUE);
+        wp_enqueue_script('theme-scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', ['jquery'], filemtime(get_stylesheet_directory() . '/dist/main.min.js'), TRUE);
+    }
+
+    public function dequeueScripts()
+    {
+        wp_dequeue_script('jquery');
+        wp_deregister_script('jquery');
     }
 
     public function themeSupports()

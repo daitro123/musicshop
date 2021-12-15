@@ -1,19 +1,7 @@
-import Swiper, { Pagination, Autoplay } from "swiper";
-
-const swiper = new Swiper(".hero-swiper", {
-	modules: [Pagination, Autoplay],
-	speed: 800,
-	loop: true,
-	autoplay: {
-		delay: 6500,
-		disableOnInteraction: false,
-	},
-	pagination: {
-		el: ".swiper-pagination",
-		clickable: true,
-		type: "bullets",
-		// renderBullet: (index, className) => {
-		// 	return `<span class="${className} haha${index}"></span>`;
-		// },
-	},
-});
+/**
+ * Initialize gallery swiping and thumbs
+ * Is run when variation is switched and new gallery node is inserted in DOM
+ */
+(function ($) {
+	// $(".single-product-content").on("DOMNodeInserted", function () {});
+})(jQuery);
