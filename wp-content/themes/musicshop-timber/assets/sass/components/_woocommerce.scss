@@ -86,3 +86,18 @@ body.archive h1 {
 .woocommerce-result-count {
 	font-size: 0.875em;
 }
+
+.variations .label label {
+	display: block;
+	font-size: 1.25rem;
+	font-weight: $font-bold;
+}
+
+#color {
+	appearance: none;
+	border: 0;
+	background: $grey--light;
+	padding: 0.5rem 1.5rem 0.5rem 0.75rem;
+	cursor: pointer;
+	font-size: 0.875em;
+}

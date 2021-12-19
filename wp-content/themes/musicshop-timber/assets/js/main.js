@@ -5,9 +5,9 @@ import "popper.js";
 import "bootstrap";
 
 (function ($) {
-	/**
+	/**********************
 	 * Init hero swiper
-	 */
+	 **********************/
 	const swiper = new Swiper(".hero-swiper", {
 		modules: [Pagination, Autoplay],
 		speed: 800,
@@ -26,9 +26,9 @@ import "bootstrap";
 		},
 	});
 
-	/**
+	/**************************
 	 * Gallery init
-	 */
+	 **************************/
 	function swiperGalleryInit() {
 		const thumbsSwiper = new Swiper(".gallery__thumbs", {
 			freeMode: true,
@@ -55,13 +55,13 @@ import "bootstrap";
 		});
 	}
 
-	/**
+	/********************************************
 	 * Init gallery for variable product types
 	 *
 	 * Fetch variation image URLs from custom API route,
 	 * listen to change event on select variation element and
 	 * update the gallery if event fires
-	 */
+	 *******************************************/
 	if ($("body.single-product").length && $("article.product-type-variable").length) {
 		let variations;
 

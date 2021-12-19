@@ -24,7 +24,7 @@ class Core
 
     public function loadScripts()
     {
-        wp_enqueue_script('vendor-scripts', get_stylesheet_directory_uri() . '/dist/vendor.min.js', [], filemtime(get_stylesheet_directory() . '/dist/vendor.min.js'), TRUE);
+        // wp_enqueue_script('vendor-scripts', get_stylesheet_directory_uri() . '/dist/vendor.min.js', [], filemtime(get_stylesheet_directory() . '/dist/vendor.min.js'), TRUE);
         // wp_enqueue_script('single-product-scripts', get_stylesheet_directory_uri() . '/assets/js/single-product.js', null, "1.0", TRUE);
         wp_enqueue_script('theme-scripts', get_stylesheet_directory_uri() . '/dist/main.min.js', ['jquery'], filemtime(get_stylesheet_directory() . '/dist/main.min.js'), TRUE);
     }

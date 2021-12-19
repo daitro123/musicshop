@@ -4,7 +4,7 @@
 /wp-content/themes/*
 node_modules
 vendor
-images
+# images
 dist
 
 !wp-content/
