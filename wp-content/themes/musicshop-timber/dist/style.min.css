@@ -6708,6 +6708,102 @@ a.text-dark:hover, a.text-dark:focus {
   visibility: hidden !important;
 }
 
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-thumbnail {
+  padding: 0.25rem;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.figure {
+  display: inline-block;
+}
+
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.figure-caption {
+  font-size: 90%;
+  color: #6c757d;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+.close:hover {
+  color: #000;
+  text-decoration: none;
+}
+.close:not(:disabled):not(.disabled):hover, .close:not(:disabled):not(.disabled):focus {
+  opacity: 0.75;
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+}
+
+a.close.disabled {
+  pointer-events: none;
+}
+
+.toast {
+  flex-basis: 350px;
+  max-width: 350px;
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  border-radius: 0.25rem;
+}
+.toast:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+.toast.showing {
+  opacity: 1;
+}
+.toast.show {
+  display: block;
+  opacity: 1;
+}
+.toast.hide {
+  display: none;
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  color: #6c757d;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.toast-body {
+  padding: 0.75rem;
+}
+
 @font-face {
   font-family: "swiper-icons";
   src: url("data:application/font-woff;charset=utf-8;base64, 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") format("woff");
@@ -7333,7 +7429,7 @@ footer.footer {
   display: inline-block;
   padding: 0.75em 2em;
   text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: none !important;
   font-weight: 700;
   border: 0;
   cursor: pointer;
@@ -7344,6 +7440,7 @@ footer.footer {
 }
 .btn--primary:hover, .btn--primary:focus {
   background: #f9bb2a;
+  color: #302e2b;
 }
 .btn--secondary {
   background: #51a56b;
@@ -7404,6 +7501,7 @@ body.single-product .product_title {
 }
 body.single-product .gallery {
   margin-bottom: 4rem;
+  position: relative;
 }
 body.single-product .gallery__main {
   margin-bottom: 1rem;
@@ -7416,6 +7514,17 @@ body.single-product .gallery__main .swiper-slide > a {
   display: flex;
   justify-content: center;
   height: 100%;
+}
+body.single-product .gallery-loading {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  justify-content: center;
+  align-items: center;
+  color: #302e2b;
+  font-weight: 600;
+  z-index: 5;
 }
 body.single-product .swiper-slide > a {
   display: block;
@@ -7451,8 +7560,11 @@ body.single-product .price {
   margin-bottom: 1rem;
 }
 body.single-product .price .value {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 700;
+}
+body.single-product .price .tax-comment {
+  font-size: 0.75rem;
 }
 body.single-product .quantity {
   margin-bottom: 0.625rem;
@@ -7502,6 +7614,85 @@ body.single-product ul.wc-tabs li.active::before {
 
 .related__products h2 {
   margin-bottom: 2rem;
+}
+
+.variation__label label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.variation__value {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.variation__value select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  background: #eeeeee;
+  padding: 0.5rem 1.5rem 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.875em;
+}
+.variation__value::after {
+  content: "▾";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: #000;
+  pointer-events: none;
+}
+
+.woocommerce-variation-availability {
+  margin: 1rem 0;
+}
+
+.stock {
+  font-size: 0.875em;
+  font-weight: 600;
+}
+.stock.in-stock {
+  color: green;
+}
+
+.quantity {
+  display: inline-block;
+  margin: 3rem 10px 1rem 0;
+}
+
+.single_add_to_cart_button,
+.add_to_cart_button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1;
+  height: 36px;
+}
+
+.added_to_cart.wc-forward {
+  display: none !important;
+}
+
+.toast-header,
+.toast {
+  border-radius: 0 !important;
+}
+
+.toast-body {
+  display: flex;
+}
+.toast-body .toast-image {
+  margin-right: 1rem;
+  height: auto;
+  width: 60px;
+}
+.toast-body .toast-image img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .woocommerce button.button {
@@ -7594,21 +7785,14 @@ body.archive h1 {
   font-size: 0.875em;
 }
 
-.variations .label label {
-  display: block;
-  font-size: 1.25rem;
-  font-weight: 700;
+.woocommerce-message {
+  border-top-color: #51a56b;
 }
-
-#color {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: 0;
-  background: #eeeeee;
-  padding: 0.5rem 1.5rem 0.5rem 0.75rem;
-  cursor: pointer;
-  font-size: 0.875em;
+.woocommerce-message .button {
+  border-radius: 0;
+}
+.woocommerce-message::before {
+  color: #51a56b;
 }
 
 .input {
@@ -7636,4 +7820,36 @@ body.archive h1 {
 }
 .input--transparent::placeholder {
   color: inherit;
+}
+
+input[type=number] {
+  height: 36px;
+  border: 0;
+  background-color: #eeeeee;
+}
+
+.my-account {
+  padding: 4rem 0;
+}
+
+.woocommerce-MyAccount-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.woocommerce-MyAccount-navigation li {
+  margin-bottom: 0.75rem;
+}
+.woocommerce-MyAccount-navigation li a {
+  display: block;
+  background-color: #eeeeee;
+  padding: 1rem;
+  font-weight: 600;
+  color: #302e2b;
+}
+.woocommerce-MyAccount-navigation li a:hover {
+  background-color: #fac343;
+}
+.woocommerce-MyAccount-navigation li.is-active a {
+  background-color: #fac343;
 }

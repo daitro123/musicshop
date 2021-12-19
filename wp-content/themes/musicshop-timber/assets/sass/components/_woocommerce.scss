@@ -87,17 +87,14 @@ body.archive h1 {
 	font-size: 0.875em;
 }
 
-.variations .label label {
-	display: block;
-	font-size: 1.25rem;
-	font-weight: $font-bold;
-}
+.woocommerce-message {
+	border-top-color: $secondary;
 
-#color {
-	appearance: none;
-	border: 0;
-	background: $grey--light;
-	padding: 0.5rem 1.5rem 0.5rem 0.75rem;
-	cursor: pointer;
-	font-size: 0.875em;
+	& .button {
+		border-radius: 0;
+	}
+
+	&::before {
+		color: $secondary;
+	}
 }

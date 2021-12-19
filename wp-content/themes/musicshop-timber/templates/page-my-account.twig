@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper container">
+		<div class="my-account" id="my-account">
+			<section class="my-account__content">
+				<h1 class="my-account__title">{{post.title}}</h1>
+				<div class="my-account__body">
+					{{post.content}}
+				</div>
+			</section>
+		</div>
+	</div>
+	<!-- /content-wrapper -->
+{% endblock %}

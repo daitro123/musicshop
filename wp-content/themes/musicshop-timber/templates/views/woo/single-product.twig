@@ -8,13 +8,13 @@
 
 		{% do action('woocommerce_before_single_product') %}
 
-		<article itemscope itemtype="http://schema.org/Product" class="single-product {{ post.class }}" data-product-id="{{post.ID}}" ">
+		<article itemscope itemtype="http://schema.org/Product" class="single-product {{ post.class }}" data-product-id="{{post.ID}}">
 
 			<div class="woocommerce_before_single_product_summary">
 				{% do action('woocommerce_before_single_product_summary') %}
 				<div class="sku">
 					<strong>Model:</strong>
-					{{sku}}
+					<span class="sku-value">{{sku}}</span>
 				</div>
 			</div>
 
@@ -51,6 +51,9 @@
 							</div>
 
 						</div>
+						<div class="gallery-loading">
+							<span>Loading</span>
+						</div>
 					</div>
 
 					<div class="summary entry-summary">
@@ -65,6 +68,7 @@
 				<div class="col-12 col-md-4 single-product-sidebar">
 					<div class="price">
 						<span class="value" itemprop="price" content="{{ product.price }}">{{ function('wc_price', product.price) }}</span>
+						<div class="tax-comment">Cena s DPH 21%</div>
 					</div>
 
 					{% do action('musicshop_single_sidebar') %}
@@ -86,6 +90,28 @@
 			</div>
 		</section>
 
+	</div>
+
+	<div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+		<div id="cartToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+			<div class="toast-header bg-primary">
+				<img src="{{theme.link}}/assets/icons/cart-empty.png" class="rounded mr-2" height="16" width="16" alt="cart">
+				<strong class="mr-auto text-dark">Item addede to cart</strong>
+				<small class="text-dark">just now</small>
+				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="toast-body p-3">
+				<div class="toast-image">
+					<img src="" alt="">
+				</div>
+				<div class="toast-message">
+					Message
+				</div>
+
+			</div>
+		</div>
 	</div>
 
 

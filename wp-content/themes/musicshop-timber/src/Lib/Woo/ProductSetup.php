@@ -162,6 +162,7 @@ class ProductSetup
         foreach ($variations as $variation) {
             $variationImages[] = array(
                 'variation_id' => $variation['variation_id'],
+                'sku' => $variation['sku'],
                 'attribute_color' => $variation['attributes']['attribute_color'],
                 "images" => array(
                     'thumbnails' => get_variation_gallery_images($variation['variation_id']),

@@ -1,0 +1,32 @@
+.my-account {
+	padding: 4rem 0;
+}
+
+.woocommerce-MyAccount-navigation {
+	ul {
+		margin: 0;
+		padding: 0;
+
+		list-style: none;
+	}
+
+	li {
+		margin-bottom: 0.75rem;
+	}
+
+	li a {
+		display: block;
+		background-color: $grey--light;
+		padding: 1rem;
+		font-weight: 600;
+		color: $dark;
+
+		&:hover {
+			background-color: $primary;
+		}
+	}
+
+	li.is-active a {
+		background-color: $primary;
+	}
+}
