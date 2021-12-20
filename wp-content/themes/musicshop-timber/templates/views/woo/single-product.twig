@@ -66,10 +66,13 @@
 
 				</div>
 				<div class="col-12 col-md-4 single-product-sidebar">
-					<div class="price">
-						<span class="value" itemprop="price" content="{{ product.price }}">{{ function('wc_price', product.price) }}</span>
-						<div class="tax-comment">Cena s DPH 21%</div>
-					</div>
+					{% if not isVariable %}
+						<div class="price">
+							{{price_html}}
+							<div class="tax-comment">Cena s DPH 21%</div>
+						</div>
+					{% endif %}
+
 
 					{% do action('musicshop_single_sidebar') %}
 				</div>
@@ -92,27 +95,9 @@
 
 	</div>
 
-	<div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
-		<div id="cartToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-			<div class="toast-header bg-primary">
-				<img src="{{theme.link}}/assets/icons/cart-empty.png" class="rounded mr-2" height="16" width="16" alt="cart">
-				<strong class="mr-auto text-dark">Item addede to cart</strong>
-				<small class="text-dark">just now</small>
-				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="toast-body p-3">
-				<div class="toast-image">
-					<img src="" alt="">
-				</div>
-				<div class="toast-message">
-					Message
-				</div>
+	{{product|print_r}}
 
-			</div>
-		</div>
-	</div>
+	{% include "views/woo/toast.twig" %}
 
 
 {% endblock  %}

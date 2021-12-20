@@ -41,6 +41,9 @@ class ProductSetup
 
         remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
         remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
+
+        // remove_action('woocommerce_single_variation', 'woocommerce_single_variation', 10);
+        remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
     }
 
     public function addActions()
@@ -62,6 +65,7 @@ class ProductSetup
         // related product added after single product
         // add_action("woocommerce_after_single_product", 'woocommerce_output_related_products');
 
+        add_action('woocommerce_after_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
 
 
         add_action("rest_api_init", function () {
@@ -70,6 +74,16 @@ class ProductSetup
                 'callback' => [$this, 'variations_API_route']
             ));
         });
+
+
+        // https://stackoverflow.com/questions/24040262/display-variation-price-woocommerce-when-all-prices-are-equal
+        add_filter('woocommerce_available_variation', function ($available_variations, \WC_Product_Variable $variable, \WC_Product_Variation $variation) {
+            if (empty($available_variations['price_html'])) {
+                $available_variations['price_html'] = '<span class="price">' . $variation->get_price_html() . '</span>';
+            }
+
+            return $available_variations;
+        }, 10, 3);
     }
 
     public function custom_thumbnail()
@@ -129,7 +143,7 @@ class ProductSetup
     {
         global $product;
 
-        if ($product->is_on_sale()) {
+        if ($product->is_on_sale() && $product->get_type() != 'variable') {
             $regularPrice = $product->get_regular_price();
             $salePrice = $product->get_sale_price();
             $percentage = round((($salePrice / $regularPrice) - 1) * 100);

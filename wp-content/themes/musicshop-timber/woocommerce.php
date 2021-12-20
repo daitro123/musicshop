@@ -7,6 +7,8 @@ if (is_singular('product')) {
     $context['post']    = Timber::get_post();
     $product            = wc_get_product($context['post']->ID);
     $context['product'] = $product;
+    $context['price_html'] = $product->get_price_html();
+    $context['isVariable'] = $product->get_type() === 'variable';
     $context['sku'] = $product->get_sku();
     $context['isOnSale'] = $product->is_on_sale();
 

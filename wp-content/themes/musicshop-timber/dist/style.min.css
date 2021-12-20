@@ -7557,13 +7557,26 @@ body.single-product .fslightbox-container {
   background: rgba(255, 255, 255, 0.9) !important;
 }
 body.single-product .price {
-  margin-bottom: 1rem;
+  display: block;
 }
-body.single-product .price .value {
+body.single-product .price .amount {
   font-size: 2em;
   font-weight: 700;
 }
-body.single-product .price .tax-comment {
+body.single-product .price .original-price .amount,
+body.single-product .price del .amount {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  text-decoration: line-through;
+  color: #6e6e6e;
+}
+body.single-product del,
+body.single-product ins {
+  display: block;
+  text-decoration: none;
+}
+body.single-product .tax-comment {
   font-size: 0.75rem;
 }
 body.single-product .quantity {
@@ -7646,13 +7659,10 @@ body.single-product ul.wc-tabs li.active::before {
   pointer-events: none;
 }
 
-.woocommerce-variation-availability {
-  margin: 1rem 0;
-}
-
 .stock {
   font-size: 0.875em;
   font-weight: 600;
+  margin: 1rem 0 !important;
 }
 .stock.in-stock {
   color: green;
@@ -7693,6 +7703,9 @@ body.single-product ul.wc-tabs li.active::before {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.toast-body.toast-message {
+  font-weight: 600;
 }
 
 .woocommerce button.button {

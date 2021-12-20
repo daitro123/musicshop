@@ -81,15 +81,33 @@ body.single-product {
 	}
 
 	.price {
-		margin-bottom: 1rem;
-		.value {
+		display: block;
+		// margin-bottom: 1rem;
+		.amount {
 			font-size: 2em;
 			font-weight: 700;
 		}
 
-		.tax-comment {
-			font-size: 0.75rem;
+		.original-price,
+		del {
+			.amount {
+				font-size: 1.4em;
+				font-weight: 400;
+				margin-bottom: 1rem;
+				text-decoration: line-through;
+				color: $grey--dark;
+			}
 		}
+	}
+
+	del,
+	ins {
+		display: block;
+		text-decoration: none;
+	}
+
+	.tax-comment {
+		font-size: 0.75rem;
 	}
 
 	.quantity {
@@ -184,13 +202,10 @@ body.single-product {
 	}
 }
 
-.woocommerce-variation-availability {
-	margin: 1rem 0;
-}
-
 .stock {
 	font-size: 0.875em;
 	font-weight: 600;
+	margin: 1rem 0 !important;
 
 	&.in-stock {
 		color: green;
@@ -232,5 +247,9 @@ body.single-product {
 			width: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&.toast-message {
+		font-weight: 600;
 	}
 }
