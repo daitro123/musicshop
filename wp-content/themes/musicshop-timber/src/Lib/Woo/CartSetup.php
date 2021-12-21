@@ -29,11 +29,10 @@ class CartSetup
     {
         global $woocommerce;
 
-        ob_start();
-?>
+        ob_start(); ?>
         <span class="cart-icon__count <?php echo $woocommerce->cart->cart_contents_count == 0 ? "cart-icon__count--empty" : ""; ?>"><?php echo $woocommerce->cart->cart_contents_count ?></span>
-        <?php
-        $fragments['span.cart-icon__count'] = ob_get_clean();
+        
+        <?php $fragments['span.cart-icon__count'] = ob_get_clean();
         return $fragments;
     }
 
@@ -46,9 +45,7 @@ class CartSetup
 
 
         if ($product) {
-
-            ob_start();
-        ?>
+            ob_start(); ?>
             <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="6000">
                 <div class="toast-header bg-primary">
                     <img src="<?php echo get_theme_file_uri(); ?>/assets/icons/cart-empty.png" class="rounded mr-2" height="16" width="16" alt="cart">
@@ -69,8 +66,8 @@ class CartSetup
 
                 </div>
             </div>
-<?php
-            $fragments['div#cartToast'] = ob_get_clean();
+
+            <?php $fragments['div#cartToast'] = ob_get_clean();
         }
 
         return $fragments;

@@ -12,7 +12,7 @@ class ProductSetup
 
     public function removeActions()
     {
-        /* 
+        /*
         * Removing hooked functions from PRODUCT (within loops)
         */
         remove_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail');
@@ -90,13 +90,13 @@ class ProductSetup
     {
         global $product;
 
-        ob_start();
-?>
+        ob_start(); ?>
+
         <div class="product__thumbnail">
             <?php echo get_the_post_thumbnail($product->id); ?>
         </div>
-    <?php
-        $output = ob_get_contents();
+        
+        <?php $output = ob_get_contents();
         ob_end_flush();
 
         return $output;
@@ -127,8 +127,7 @@ class ProductSetup
             }
         }
 
-        ob_start();
-    ?>
+        ob_start(); ?>
         <div class="product__price">
             <span> <?php echo $price; ?> </span>
         </div>
@@ -149,8 +148,7 @@ class ProductSetup
             $percentage = round((($salePrice / $regularPrice) - 1) * 100);
 
 
-            ob_start();
-        ?>
+            ob_start(); ?>
             <div class="product__onsale">
 
                 <span class="sale-tag">
@@ -158,8 +156,8 @@ class ProductSetup
                 </span>
 
             </div>
-<?php
-            $output = ob_get_contents();
+            
+            <?php $output = ob_get_contents();
             ob_end_flush();
 
             return $output;
