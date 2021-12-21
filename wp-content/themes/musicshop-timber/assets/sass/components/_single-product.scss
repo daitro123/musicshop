@@ -166,6 +166,10 @@ body.single-product {
 	}
 }
 
+.woocommerce-variation-description {
+	margin: 1rem 0;
+}
+
 .related__products {
 	h2 {
 		margin-bottom: 2rem;
@@ -191,15 +195,24 @@ body.single-product {
 		font-size: 0.875em;
 	}
 
-	&::after {
-		content: "▾";
+	& svg {
 		position: absolute;
+		// inset: 0;
 		top: 50%;
-		transform: translateY(-50%);
 		right: 10px;
-		color: $black;
+		transform: translateY(-50%);
 		pointer-events: none;
 	}
+
+	// &::after {
+	// 	content: "▾";
+	// 	position: absolute;
+	// 	top: 50%;
+	// 	transform: translateY(-50%);
+	// 	right: 10px;
+	// 	color: $black;
+	// 	pointer-events: none;
+	// }
 }
 
 .stock {
