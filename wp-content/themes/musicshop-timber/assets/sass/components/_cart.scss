@@ -41,3 +41,10 @@
 .woocommerce table.shop_table .amount {
 	font-size: 0.875em;
 }
+
+.empty-cart {
+	&__message {
+		font-size: 1.75em;
+		font-weight: 600;
+	}
+}

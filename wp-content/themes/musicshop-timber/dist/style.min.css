@@ -7230,6 +7230,29 @@ h1 {
   pointer-events: all;
 }
 
+.cart-icon {
+  position: relative;
+}
+.cart-icon__count {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.625em;
+  font-weight: 600;
+  height: 18px;
+  width: 18px;
+  bottom: -5px;
+  right: -5px;
+  background-color: #51a56b;
+  border-radius: 50%;
+  color: #fff;
+  pointer-events: none;
+}
+.cart-icon__count--empty {
+  display: none;
+}
+
 .submenu-wrapper {
   visibility: hidden;
   opacity: 0;
@@ -7910,4 +7933,9 @@ input[type=number] {
 
 .woocommerce table.shop_table .amount {
   font-size: 0.875em;
+}
+
+.empty-cart__message {
+  font-size: 1.75em;
+  font-weight: 600;
 }

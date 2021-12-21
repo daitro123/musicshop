@@ -63,6 +63,31 @@
 	}
 }
 
+.cart-icon {
+	position: relative;
+
+	&__count {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 0.625em;
+		font-weight: 600;
+		height: 18px;
+		width: 18px;
+		bottom: -5px;
+		right: -5px;
+		background-color: $secondary;
+		border-radius: 50%;
+		color: $white;
+		pointer-events: none;
+
+		&--empty {
+			display: none;
+		}
+	}
+}
+
 .submenu-wrapper {
 	visibility: hidden;
 	opacity: 0;

@@ -16,6 +16,7 @@ if (file_exists($composer_autoload)) {
 	new Setup\Core();
 	new Setup\Site();
 	new Woo\ProductSetup();
+	new Woo\CartSetup();
 }
 
 

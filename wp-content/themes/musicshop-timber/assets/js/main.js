@@ -208,12 +208,7 @@ import "popper.js";
 
 	$(document).ready(function () {
 		$("body").on("added_to_cart", function () {
-			const productName = $(".add_to_cart_button").data("product_name");
-			const productThumbnail = $(".add_to_cart_button").data("product_thumbnail");
-
-			$("#cartToast .toast-message").html(productName);
-			$("#cartToast .toast-image img").attr("src", productThumbnail);
-			$("#cartToast").toast({ delay: 4000 }).toast("show");
+			$("#cartToast").toast({ animation: true, autohide: true, delay: 4000 }).toast("show");
 		});
 	});
 })(jQuery);
