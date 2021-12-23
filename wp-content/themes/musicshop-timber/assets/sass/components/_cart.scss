@@ -48,3 +48,26 @@
 		font-weight: 600;
 	}
 }
+
+.woocommerce #content table.cart td.actions .input-text,
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+	width: auto;
+	height: 36px;
+}
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	background-color: $secondary;
+	border-radius: 0;
+
+	&:hover {
+		background-color: darken($secondary, 15);
+	}
+}

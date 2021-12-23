@@ -7603,7 +7603,8 @@ body.single-product .tax-comment {
   font-size: 0.75rem;
 }
 body.single-product .quantity {
-  margin-bottom: 0.625rem;
+  display: inline-block;
+  margin: 3rem 10px 1rem 0;
 }
 body.single-product .sku {
   font-size: 0.75em;
@@ -7691,11 +7692,6 @@ body.single-product ul.wc-tabs li.active::before {
 }
 .stock.in-stock {
   color: green;
-}
-
-.quantity {
-  display: inline-block;
-  margin: 3rem 10px 1rem 0;
 }
 
 .single_add_to_cart_button,
@@ -7938,4 +7934,28 @@ input[type=number] {
 .empty-cart__message {
   font-size: 1.75em;
   font-weight: 600;
+}
+
+.woocommerce #content table.cart td.actions .input-text,
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+  width: auto;
+  height: 36px;
+}
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  background-color: #51a56b;
+  border-radius: 0;
+}
+#add_payment_method .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button:hover {
+  background-color: #38724a;
 }
