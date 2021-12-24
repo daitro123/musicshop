@@ -41,10 +41,11 @@ class CartSetup
         global $woocommerce;
 
         $items = $woocommerce->cart->get_cart();
-        $product = end($items)['data'];
 
 
-        if ($product) {
+        if ($items) {
+            $product = end($items)['data'];
+
             ob_start(); ?>
             <div id="cartToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="6000">
                 <div class="toast-header bg-primary">

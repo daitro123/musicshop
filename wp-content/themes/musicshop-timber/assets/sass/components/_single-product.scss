@@ -190,7 +190,7 @@ body.single-product {
 		appearance: none;
 		border: 0;
 		background: $grey--light;
-		padding: 0.5rem 1.5rem 0.5rem 0.75rem;
+		padding: 0.5rem 2rem 0.5rem 0.75rem;
 		cursor: pointer;
 		font-size: 0.875em;
 	}
@@ -199,7 +199,7 @@ body.single-product {
 		position: absolute;
 		// inset: 0;
 		top: 50%;
-		right: 10px;
+		right: 14px;
 		transform: translateY(-50%);
 		pointer-events: none;
 	}
