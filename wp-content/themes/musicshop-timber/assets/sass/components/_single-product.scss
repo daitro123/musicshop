@@ -111,7 +111,8 @@ body.single-product {
 	}
 
 	.quantity {
-		margin-bottom: 0.625rem;
+		display: inline-block;
+		margin: 3rem 10px 1rem 0;
 	}
 
 	.sku {
@@ -223,11 +224,6 @@ body.single-product {
 	&.in-stock {
 		color: green;
 	}
-}
-
-.quantity {
-	display: inline-block;
-	margin: 3rem 10px 1rem 0;
 }
 
 .single_add_to_cart_button,
