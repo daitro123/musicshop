@@ -30,7 +30,12 @@
 				height: 100%;
 				display: flex;
 				padding: 1.2em;
+				border-left: 1px solid $grey--light;
 				transition: all 0.1s linear;
+
+				&:last-child {
+					border-right: 1px solid $grey--light;
+				}
 
 				&::before {
 					content: "";
@@ -61,6 +66,10 @@
 			}
 		}
 	}
+}
+
+.hdr-logo img.logo {
+	width: 6rem;
 }
 
 .cart-icon {

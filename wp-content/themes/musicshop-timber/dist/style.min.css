@@ -7205,7 +7205,11 @@ h1 {
   height: 100%;
   display: flex;
   padding: 1.2em;
+  border-left: 1px solid #eeeeee;
   transition: all 0.1s linear;
+}
+.header .nav-main > ul > li:last-child {
+  border-right: 1px solid #eeeeee;
 }
 .header .nav-main > ul > li::before {
   content: "";
@@ -7228,6 +7232,10 @@ h1 {
   visibility: visible;
   opacity: 1;
   pointer-events: all;
+}
+
+.hdr-logo img.logo {
+  width: 6rem;
 }
 
 .cart-icon {
@@ -7655,6 +7663,10 @@ body.single-product ul.wc-tabs li.active::before {
 
 .related__products h2 {
   margin-bottom: 2rem;
+}
+
+.variation {
+  margin: 1rem 0;
 }
 
 .variation__label label {

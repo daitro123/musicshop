@@ -14,10 +14,17 @@ if (is_singular('product')) {
 
     // Preparing gallery images
     $gallery_ids = $product->get_gallery_image_ids();
+    $gallery = [];
     foreach ($gallery_ids as $id) {
         $gallery[] = new Timber\Image($id);
     };
+
+    if (count($gallery) < 2) {
+        $gallery[] = new Timber\Image($product->get_image_id());
+    }
+
     $context['images'] = $gallery;
+
 
     // Get related products
     $related_limit               = wc_get_loop_prop('columns');

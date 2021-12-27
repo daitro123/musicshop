@@ -147,7 +147,6 @@ class ProductSetup
             $salePrice = $product->get_sale_price();
             $percentage = round((($salePrice / $regularPrice) - 1) * 100);
 
-
             ob_start(); ?>
             <div class="product__onsale">
 

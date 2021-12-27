@@ -8,7 +8,13 @@ class CartSetup
     {
         add_action('init', [$this, 'removeActions']);
         add_action('init', [$this, 'addActions']);
+        add_action('init', [$this, 'filters']);
         $this->addFragments();
+    }
+
+    public function filters()
+    {
+        add_filter('woocommerce_cart_item_removed_notice_type', '__return_null');
     }
 
     public function removeActions()

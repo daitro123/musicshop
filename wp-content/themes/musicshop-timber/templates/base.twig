@@ -8,7 +8,7 @@
 		<div class="nav-account">
 			<div class="nav-account__container container-lg">
 				<div class="hdr-logo" role="banner">
-					<a class="hdr-logo-link fs-1" href="{{site.url}}" rel="home">{{site.name}}</a>
+					<a class="hdr-logo-link fs-1" href="{{site.url}}" rel="home"><img class="logo" src="{{theme.link}}/assets/icons/logo.png" alt=""></a>
 				</div>
 				<ul class="nav-account__icons">
 					{% if isLoggedin %}
@@ -32,7 +32,7 @@
 		</div>
 		<div class="wrapper container-lg">
 
-			<nav id="nav-main container-lg" class="nav-main" role="navigation">
+			<nav id="nav-main" class="nav-main" role="navigation">
 				{% include "menu.twig" with {'items': menu.get_items} %}
 			</nav>
 		</div>
