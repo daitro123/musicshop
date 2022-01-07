@@ -1,73 +1,92 @@
-.cart-content {
-	padding: 4rem 0;
-}
-
 .woocommerce .cart-collaterals .cart_totals,
 .woocommerce-page .cart-collaterals .cart_totals {
-	@include media-breakpoint-up(xl) {
-		width: 100%;
-		float: none;
-	}
+    @include media-breakpoint-up(xl) {
+        width: 100%;
+        float: none;
+    }
 }
 
 .woocommerce table.shop_table {
-	border: 0;
-	border-radius: 0;
+    border: 0;
+    border-radius: 0;
 }
 
 .woocommerce table.shop_table th {
-	text-transform: uppercase;
-	color: $grey--dark;
-	font-weight: 600;
+    text-transform: uppercase;
+    color: $grey--dark;
+    font-weight: 600;
 }
 
 .woocommerce table.shop_table td {
-	border: 0;
+    border: 0;
 }
 
 // .woocommerce table.shop_table tr:first-child td,
 .woocommerce table.shop_table thead tr th {
-	border-bottom: 3px solid $grey--light;
+    border-bottom: 3px solid $grey--light;
 }
 
 .woocommerce table.shop_table .cart-subtotal th,
 .woocommerce table.shop_table .order-total th {
-	font-size: 0.875em;
-	color: $grey--dark;
-	font-weight: $font-normal;
-	text-transform: capitalize;
+    font-size: 0.875em;
+    color: $grey--dark;
+    font-weight: $font-normal;
+    text-transform: capitalize;
 }
 
 .woocommerce table.shop_table .amount {
-	font-size: 0.875em;
+    font-size: 0.875em;
 }
 
 .empty-cart {
-	&__message {
-		font-size: 1.75em;
-		font-weight: 600;
-	}
+    &__message {
+        font-size: 1.75em;
+        font-weight: 600;
+    }
 }
 
 .woocommerce #content table.cart td.actions .input-text,
 .woocommerce table.cart td.actions .input-text,
 .woocommerce-page #content table.cart td.actions .input-text,
 .woocommerce-page table.cart td.actions .input-text {
-	width: auto;
-	height: 36px;
+    width: auto;
+    height: 36px;
 }
 
 #add_payment_method .wc-proceed-to-checkout a.checkout-button,
 .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 40px;
-	background-color: $secondary;
-	border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: $secondary;
+    border-radius: 0;
 
-	&:hover {
-		background-color: darken($secondary, 15);
-	}
+    &:hover {
+        background-color: darken($secondary, 15);
+    }
+}
+
+.coupon-container {
+    width: 100%;
+    @include media-breakpoint-between(md, lg) {
+        width: 48%;
+        float: right;
+    }
+
+    h3 {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1em;
+        color: $grey--dark;
+        padding: 9px 12px;
+        border-bottom: 3px solid $grey--light;
+    }
+
+    input,
+    button {
+        width: 100%;
+        margin-bottom: 10px !important;
+    }
 }

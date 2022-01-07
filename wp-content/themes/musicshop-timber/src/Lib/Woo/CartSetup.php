@@ -14,7 +14,7 @@ class CartSetup
 
     public function filters()
     {
-        add_filter('woocommerce_cart_item_removed_notice_type', '__return_null');
+        // add_filter('woocommerce_cart_item_removed_notice_type', '__return_null');
     }
 
     public function removeActions()

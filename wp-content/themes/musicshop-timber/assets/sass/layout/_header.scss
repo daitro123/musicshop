@@ -1,181 +1,183 @@
 .header {
-	position: relative;
-	background: $background;
+    position: relative;
+    background: $background;
 
-	& a {
-		text-decoration: none;
-		color: inherit;
-	}
+    & a {
+        text-decoration: none;
+        color: inherit;
+    }
 
-	& h1 {
-		margin: 0;
-	}
+    & h1 {
+        margin: 0;
+    }
 
-	.wrapper {
-		display: flex;
-		justify-content: space-between;
-		align-items: stretch;
-	}
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
 
-	.nav-main {
-		// 1. categories - Guitars etc.
-		& > ul {
-			list-style: none;
-			display: flex;
-			padding: 0;
-			height: 100%;
-			margin: 0;
+    .nav-main {
+        // 1. categories - Guitars etc.
+        & > ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            height: 100%;
+            margin: 0;
 
-			& > li {
-				height: 100%;
-				display: flex;
-				padding: 1.2em;
-				border-left: 1px solid $grey--light;
-				transition: all 0.1s linear;
+            & > li {
+                height: 100%;
+                display: flex;
+                padding: 1.2em;
+                border-left: 1px solid $grey--light;
+                transition: all 0.1s linear;
 
-				&:last-child {
-					border-right: 1px solid $grey--light;
-				}
+                &:last-child {
+                    border-right: 1px solid $grey--light;
+                }
 
-				&::before {
-					content: "";
-					width: 100%;
-					height: 3px;
-					background: $primary;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-				}
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 3px;
+                    background: $primary;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
 
-				& > a {
-					display: inline-block;
-					display: flex;
-					align-items: center;
-				}
+                & > a {
+                    display: inline-block;
+                    display: flex;
+                    align-items: center;
+                }
 
-				&:hover,
-				&:focus-within {
-					background: $primary;
+                &:hover,
+                &:focus-within {
+                    background: $primary;
 
-					& .submenu-wrapper {
-						visibility: visible;
-						opacity: 1;
-						pointer-events: all;
-					}
-				}
-			}
-		}
-	}
+                    & .submenu-wrapper {
+                        visibility: visible;
+                        opacity: 1;
+                        pointer-events: all;
+                        box-shadow: 0 6px 30px rgba($dark, 0.5);
+                    }
+                }
+            }
+        }
+    }
 }
 
 .hdr-logo img.logo {
-	width: 6rem;
+    width: 6rem;
 }
 
 .cart-icon {
-	position: relative;
+    position: relative;
 
-	&__count {
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		font-size: 0.625em;
-		font-weight: 600;
-		height: 18px;
-		width: 18px;
-		bottom: -5px;
-		right: -5px;
-		background-color: $secondary;
-		border-radius: 50%;
-		color: $white;
-		pointer-events: none;
+    &__count {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.625em;
+        font-weight: 600;
+        height: 18px;
+        width: 18px;
+        bottom: -5px;
+        right: -5px;
+        background-color: $secondary;
+        border-radius: 50%;
+        color: $white;
+        pointer-events: none;
 
-		&--empty {
-			display: none;
-		}
-	}
+        &--empty {
+            display: none;
+        }
+    }
 }
 
 .submenu-wrapper {
-	visibility: hidden;
-	opacity: 0;
+    visibility: hidden;
+    opacity: 0;
 
-	position: absolute;
-	top: 100%;
-	left: 0;
-	right: 0;
-	background: $dark;
-	z-index: 100;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $dark;
+    z-index: 100;
 
-	transition: all 0.2s linear;
+    transition: all 0.2s linear;
 
-	// 1. subcategories - Electric, Acoustic etc.
-	& > ul {
-		padding: 3em 0;
-		margin: 0 auto;
-		display: flex;
-		color: $text-inverse;
-		list-style: none;
+    // 1. subcategories - Electric, Acoustic etc.
+    & > ul {
+        padding: 3em 0;
+        margin: 0 auto;
+        display: flex;
+        color: $text-inverse;
+        list-style: none;
 
-		& .submenu {
-			margin-right: 4rem;
-			min-width: 20rem;
-			font-weight: $font-bold;
+        & .submenu {
+            margin-right: 4rem;
+            min-width: 20rem;
+            font-weight: $font-bold;
 
-			& > a {
-				display: block;
-				padding: 1rem 0;
-				margin-bottom: 1rem;
-				border-bottom: 1px solid $primary;
-			}
+            & > a {
+                display: block;
+                padding: 1rem 0;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid $primary;
+            }
 
-			// 2. subcategories - Stratocaster, Telecaster etc.
-			& > ul {
-				list-style: none;
-				padding: 0;
+            // 2. subcategories - Stratocaster, Telecaster etc.
+            & > ul {
+                list-style: none;
+                padding: 0;
 
-				& > li {
-					margin-bottom: 5px;
-					font-weight: $font-normal;
-					font-size: 0.875em;
-				}
-			}
-		}
-	}
+                & > li {
+                    margin-bottom: 5px;
+                    font-weight: $font-normal;
+                    font-size: 0.875em;
+                }
+            }
+        }
+    }
 }
 
 .nav-account {
-	display: none;
-	padding: 0.5rem;
-	border-bottom: 1px solid $grey--light;
+    display: none;
+    padding: 0.5rem;
+    border-bottom: 1px solid $grey--light;
 
-	@include media-breakpoint-up(sm) {
-		display: block;
-	}
+    @include media-breakpoint-up(sm) {
+        display: block;
+    }
 
-	&__container {
-		@include media-breakpoint-up(sm) {
-			display: flex;
-			margin: 0 auto;
-			// max-width: $bp-xl;
-			justify-content: space-between;
-			align-items: center;
-		}
-	}
+    &__container {
+        @include media-breakpoint-up(sm) {
+            display: flex;
+            margin: 0 auto;
+            // max-width: $bp-xl;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
 
-	& img {
-		width: 1.6rem;
-	}
+    & img {
+        width: 1.6rem;
+    }
 
-	&__icons {
-		display: flex;
-		list-style: none;
-	}
+    &__icons {
+        display: flex;
+        list-style: none;
+        margin: 0;
+    }
 
-	&__icon {
-		&:last-child {
-			margin-left: 2rem;
-		}
-	}
+    &__icon {
+        &:last-child {
+            margin-left: 2rem;
+        }
+    }
 }
