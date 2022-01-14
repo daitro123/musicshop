@@ -107,24 +107,34 @@ body.archive h1 {
 }
 
 .woocommerce-info {
-    width: max-content;
+    display: inline-block;
     border: 0;
-    background-color: $grey--dark;
-    color: #fff;
+    background-color: transparent;
+    color: $dark;
+    padding: 5px;
 
     &::before {
-        color: #fff;
-        content: "\e029";
+        content: none;
     }
 }
 
 .woocommerce-error {
-    width: max-content;
+    display: inline-block;
     border: 0;
-    background-color: #b81c23;
-    color: #fff;
+    background-color: transparent;
+    color: red;
+    padding: 5px;
 
     &::before {
-        color: #fff;
+        content: none;
+        color: red;
     }
+}
+
+.woocommerce-form-coupon {
+    border-radius: 0 !important;
+}
+
+.cart_item {
+    font-size: 0.875rem;
 }

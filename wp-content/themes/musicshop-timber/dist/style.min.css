@@ -7857,28 +7857,34 @@ body.archive h1 {
 }
 
 .woocommerce-info {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
   border: 0;
-  background-color: #6e6e6e;
-  color: #fff;
+  background-color: transparent;
+  color: #302e2b;
+  padding: 5px;
 }
 .woocommerce-info::before {
-  color: #fff;
-  content: "\e029";
+  content: none;
 }
 
 .woocommerce-error {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
   border: 0;
-  background-color: #b81c23;
-  color: #fff;
+  background-color: transparent;
+  color: red;
+  padding: 5px;
 }
 .woocommerce-error::before {
-  color: #fff;
+  content: none;
+  color: red;
+}
+
+.woocommerce-form-coupon {
+  border-radius: 0 !important;
+}
+
+.cart_item {
+  font-size: 0.875rem;
 }
 
 .input {
@@ -7908,20 +7914,43 @@ body.archive h1 {
   color: inherit;
 }
 
-input[type=number] {
+.woocommerce input[type=number] {
   height: 36px;
   border: 0;
   background-color: #eeeeee;
 }
 
-.woocommerce input {
+.woocommerce-cart .woocommerce input[type=text],
+.woocommerce-cart .woocommerce input[type=tel],
+.woocommerce-cart .woocommerce input[type=email],
+.woocommerce-cart .woocommerce textarea,
+.woocommerce-cart .woocommerce select,
+.woocommerce-checkout .woocommerce input[type=text],
+.woocommerce-checkout .woocommerce input[type=tel],
+.woocommerce-checkout .woocommerce input[type=email],
+.woocommerce-checkout .woocommerce textarea,
+.woocommerce-checkout .woocommerce select {
   padding: 8px 10px;
-  border: 1px solid #8b8b8b;
+  border: 1px solid #cacaca;
   box-shadow: inset 0 1px 2px rgba(110, 110, 110, 0.5);
   outline: none;
+  font-size: 0.875rem;
 }
-.woocommerce input:focus-visible {
+.woocommerce-cart .woocommerce input[type=text]:focus-visible,
+.woocommerce-cart .woocommerce input[type=tel]:focus-visible,
+.woocommerce-cart .woocommerce input[type=email]:focus-visible,
+.woocommerce-cart .woocommerce textarea:focus-visible,
+.woocommerce-cart .woocommerce select:focus-visible,
+.woocommerce-checkout .woocommerce input[type=text]:focus-visible,
+.woocommerce-checkout .woocommerce input[type=tel]:focus-visible,
+.woocommerce-checkout .woocommerce input[type=email]:focus-visible,
+.woocommerce-checkout .woocommerce textarea:focus-visible,
+.woocommerce-checkout .woocommerce select:focus-visible {
   box-shadow: 0 0px 4px rgba(110, 110, 110, 0.5);
+}
+.woocommerce-cart label,
+.woocommerce-checkout label {
+  font-size: 0.875rem;
 }
 
 .my-account {
@@ -7979,14 +8008,14 @@ input[type=number] {
 
 .woocommerce table.shop_table .cart-subtotal th,
 .woocommerce table.shop_table .order-total th {
-  font-size: 0.875em;
+  font-size: 0.875rem;
   color: #6e6e6e;
   font-weight: 400;
   text-transform: capitalize;
 }
 
 .woocommerce table.shop_table .amount {
-  font-size: 0.875em;
+  font-size: 0.875rem;
 }
 
 .empty-cart__message {
@@ -8039,6 +8068,12 @@ input[type=number] {
 .coupon-container button {
   width: 100%;
   margin-bottom: 10px !important;
+}
+
+#add_payment_method table.cart img,
+.woocommerce-cart table.cart img,
+.woocommerce-checkout table.cart img {
+  width: 75px;
 }
 
 #order_review_heading {
