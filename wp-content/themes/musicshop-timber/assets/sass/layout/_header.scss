@@ -17,7 +17,13 @@
         align-items: stretch;
     }
 
-    .nav-main {
+    .nav-main-wrapper {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
+
+    #nav-main {
         // 1. categories - Guitars etc.
         & > ul {
             list-style: none;
@@ -69,7 +75,12 @@
     }
 }
 
-.hdr-logo img.logo {
+.header__left {
+    display: flex;
+    align-items: center;
+}
+
+.header__left img.logo {
     width: 6rem;
 }
 
@@ -146,7 +157,7 @@
     }
 }
 
-.nav-account {
+.header-top {
     display: none;
     padding: 0.5rem;
     border-bottom: 1px solid $grey--light;
@@ -178,6 +189,53 @@
     &__icon {
         &:last-child {
             margin-left: 2rem;
+        }
+    }
+}
+
+.burger-menu {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 2rem;
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+    & .burger-line {
+        width: 25px;
+        height: 2px;
+        background-color: $dark;
+
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.mobile-menu-wrapper {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+#nav-main-mobile {
+    background: $yellow;
+    color: $dark;
+    --mm-spn-item-height: 46px;
+    --mm-ocd-max-width: 500px;
+
+    span,
+    a {
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    a {
+        &:hover {
+            color: $dark;
         }
     }
 }

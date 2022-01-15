@@ -26,6 +26,7 @@
 		"bootstrap-select": "^1.13.18",
 		"fslightbox": "^3.3.0-2",
 		"jquery": "^3.6.0",
+		"mmenu-light": "^3.0.9",
 		"normalize.css": "^8.0.1",
 		"popper.js": "^1.16.1",
 		"swiper": "^7.0.8"

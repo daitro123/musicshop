@@ -1,0 +1,17 @@
+{% if menu %}
+	<ul>
+		{% for item in items %}
+			<li class="{{ item.classes | join(' ') }}">
+				{% if item.children %}
+					<span>{{ item.title }}</span>
+				{% else %}
+					<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+				{% endif %}
+
+				{% if item.children %}
+					{% include "mobile-menu.twig" with {'items': item.children} %}
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% endif %}

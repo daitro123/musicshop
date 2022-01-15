@@ -36,10 +36,10 @@ class Site extends \Timber\Site
      */
     public function add_to_context($context)
     {
-
         global $woocommerce;
 
         $context['menu']  = new Timber\Menu('main');
+        $context['mobileMenu']  = new Timber\Menu('main-mobile');
         $context['footerProductsMenu']  = new Timber\Menu('footer-products');
         $context['site']  = $this;
         $context['isLoggedin'] = is_user_logged_in();
