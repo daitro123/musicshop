@@ -1,0 +1,47 @@
+<div class="cart-hover-box" id="cart-hover-box">
+
+	{% if cartItems %}
+		<ul class="cart-hover-box__item-list">
+			{% for item in cartItems %}
+				<li class="item">
+					<div class="item__image">
+						<img src="{{item.thumbnail_url}}" alt="{{item.item_name}}">
+					</div>
+					<div class="item__description">
+						<p class="item__title">
+							{{item.item_name}}
+						</p>
+						<p class="item__price-quantity">
+							<span class="item__quantity">{{item.quantity}}</span>
+							<span>
+								&nbsp;x&nbsp;
+							</span>
+							<span class="item__price">{{item.price}}</span>
+						</p>
+					</div>
+					<a class="item__close" href="{{item.remove_item_url}}" aria-label="Remove item" data-product_id="{{item.item_id}}" data-product_sku="{{item.item_sku}}">
+						<span>
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x" viewbox="0 0 16 16">
+								<path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</span>
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+		<div class="cart-hover-box__subtotal">
+			<span>
+				<strong>Subtotal:</strong>
+			</span>
+			<span class="subtotal__value">{{total}}</span>
+		</div>
+		<div class="cart-hover-box__links">
+			<a href="/cart" class="btn btn--primary">CART</a>
+			<a href="/checkout" class="btn btn--dark">CHECKOUT</a>
+		</div>
+	{% else %}
+		<p class="empty-cart">No items in cart</p>
+	{% endif %}
+
+
+</div>

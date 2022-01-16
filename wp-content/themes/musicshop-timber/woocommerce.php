@@ -1,5 +1,7 @@
 <?php
 
+use Theme\Lib\Woo\CartSetup;
+
 $context            = Timber::context();
 $context['sidebar'] = Timber::get_widgets('shop-sidebar');
 
@@ -24,6 +26,10 @@ if (is_singular('product')) {
     }
 
     $context['images'] = $gallery;
+
+    // Get cart contents
+    $context['cartItems'] = CartSetup::getCartItems();
+    $context['cartTotal'] = WC()->cart->get_total();
 
 
     // Get related products

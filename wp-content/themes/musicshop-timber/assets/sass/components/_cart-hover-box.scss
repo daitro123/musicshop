@@ -1,0 +1,110 @@
+.cart-icon:hover .cart-hover-box {
+    opacity: 1 !important;
+    pointer-events: all;
+    top: 40px;
+}
+
+.cart-hover-box {
+    position: absolute;
+    top: 50px;
+    // max-height: 400px;
+    // overflow: auto;
+    width: 300px;
+    right: -20px;
+    border: 2px solid $grey--light;
+    background-color: $white;
+    padding: 10px;
+    opacity: 0 !important; // wc adding inline opacity 1 to fragments for some reason
+    pointer-events: none;
+    z-index: 1001;
+    box-shadow: 0 5px 30px rgba($color: $dark, $alpha: 0.2);
+    transition: all 0.3s ease-out;
+
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        width: 100%;
+        height: 25px;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: -7px;
+        right: 25px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 8px solid $white;
+    }
+
+    &__item-list {
+        list-style: none;
+        padding: 0;
+
+        & .item {
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.875rem;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+
+            &__description {
+                margin-right: 10px;
+            }
+
+            &__image {
+                height: 75px;
+                width: 75px;
+                min-width: 75px;
+                margin-right: 10px;
+
+                img {
+                    display: block;
+                    height: 75px;
+                    width: 75px;
+                    object-fit: cover;
+                }
+            }
+
+            &__price-quantity {
+                display: flex;
+                font-size: 0.75rem;
+                color: $grey--medium;
+                margin-right: 10px;
+            }
+
+            &__close {
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__subtotal {
+        padding: 10px 0;
+        margin: 10px 0;
+        border-top: 2px solid $grey;
+        border-bottom: 2px solid $grey;
+    }
+
+    &__links {
+        a.btn {
+            display: block !important;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    }
+
+    .empty-cart {
+        text-align: center;
+        font-size: 0.875rem;
+    }
+}

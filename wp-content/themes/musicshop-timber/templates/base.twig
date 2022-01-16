@@ -28,8 +28,8 @@
 
 					<li class="header-top__icon cart-icon">
 						<a href="{{site.url}}/cart"><img src="{{theme.link}}/assets/icons/cart-empty.png" alt="account"></a>
-
 						<span class="cart-icon__count cart-icon__count--empty"></span>
+						{% include "/views/woo/cart-hover-box.twig" with {'cartItems': cartItems, 'total': cartTotal} %}
 					</li>
 				</ul>
 			</div>
@@ -60,7 +60,6 @@
 			{{sidebar}}
 		</aside>
 	{% endif %}
-
 
 </main>
 

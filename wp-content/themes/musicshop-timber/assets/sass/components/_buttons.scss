@@ -1,35 +1,35 @@
 .btn {
-	display: inline-block;
-	padding: 0.75em 2em;
-	text-transform: uppercase;
-	text-decoration: none !important;
-	font-weight: $font-bold;
-	border: 0;
-	cursor: pointer;
+    display: inline-block;
+    padding: 0.75em 2em;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    font-weight: $font-bold;
+    border: 0;
+    cursor: pointer;
 
-	&--primary {
-		background: $primary;
-		color: $dark;
+    &--primary {
+        background: $primary;
+        color: $dark;
 
-		&:hover,
-		&:focus {
-			background: darken($primary, 5%);
-			color: $dark;
-		}
-	}
+        &:hover,
+        &:focus {
+            background: darken($primary, 5%);
+            color: $dark;
+        }
+    }
 
-	&--secondary {
-		background: $secondary;
-		color: $background;
-	}
+    &--secondary {
+        background: $secondary;
+        color: $background;
+    }
 
-	&--dark {
-		background: $dark;
-		color: $background;
+    &--dark {
+        background: $dark;
+        color: $white !important;
 
-		&:hover,
-		&:focus {
-			background: lighten($dark, 5%);
-		}
-	}
+        &:hover,
+        &:focus {
+            background: lighten($dark, 5%);
+        }
+    }
 }

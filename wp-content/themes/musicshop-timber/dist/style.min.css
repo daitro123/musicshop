@@ -7550,7 +7550,7 @@ footer.footer {
 }
 .btn--dark {
   background: #302e2b;
-  color: #f8f6f4;
+  color: #fff !important;
 }
 .btn--dark:hover, .btn--dark:focus {
   background: #3d3b37;
@@ -8143,4 +8143,100 @@ body.archive h1 {
 
 #order_review_heading {
   margin-top: 2rem;
+}
+
+.cart-icon:hover .cart-hover-box {
+  opacity: 1 !important;
+  pointer-events: all;
+  top: 40px;
+}
+
+.cart-hover-box {
+  position: absolute;
+  top: 50px;
+  width: 300px;
+  right: -20px;
+  border: 2px solid #eeeeee;
+  background-color: #fff;
+  padding: 10px;
+  opacity: 0 !important;
+  pointer-events: none;
+  z-index: 1001;
+  box-shadow: 0 5px 30px rgba(48, 46, 43, 0.2);
+  transition: all 0.3s ease-out;
+}
+@media (max-width: 991.98px) {
+  .cart-hover-box {
+    display: none;
+  }
+}
+.cart-hover-box::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  width: 100%;
+  height: 25px;
+}
+.cart-hover-box::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 25px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid #fff;
+}
+.cart-hover-box__item-list {
+  list-style: none;
+  padding: 0;
+}
+.cart-hover-box__item-list .item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.875rem;
+}
+.cart-hover-box__item-list .item:not(:last-child) {
+  margin-bottom: 10px;
+}
+.cart-hover-box__item-list .item__description {
+  margin-right: 10px;
+}
+.cart-hover-box__item-list .item__image {
+  height: 75px;
+  width: 75px;
+  min-width: 75px;
+  margin-right: 10px;
+}
+.cart-hover-box__item-list .item__image img {
+  display: block;
+  height: 75px;
+  width: 75px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cart-hover-box__item-list .item__price-quantity {
+  display: flex;
+  font-size: 0.75rem;
+  color: #8b8b8b;
+  margin-right: 10px;
+}
+.cart-hover-box__item-list .item__close {
+  margin-left: auto;
+}
+.cart-hover-box__subtotal {
+  padding: 10px 0;
+  margin: 10px 0;
+  border-top: 2px solid #cacaca;
+  border-bottom: 2px solid #cacaca;
+}
+.cart-hover-box__links a.btn {
+  display: block !important;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.cart-hover-box .empty-cart {
+  text-align: center;
+  font-size: 0.875rem;
 }

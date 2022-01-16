@@ -11,12 +11,9 @@ const menu = new MmenuLight(document.querySelector("#nav-main-mobile"), "(max-wi
 const navigator = menu.navigation({});
 const drawer = menu.offcanvas({ position: "left" });
 
-console.log(menu);
-
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("a[href='#nav-main-mobile']").addEventListener("click", (event) => {
         event.preventDefault();
-        console.log("test");
         drawer.open();
     });
 });
